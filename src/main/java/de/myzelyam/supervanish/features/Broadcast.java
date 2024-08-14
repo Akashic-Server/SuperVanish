@@ -23,6 +23,7 @@ public class Broadcast extends Feature {
     }
 
     public static void announceSilentJoin(Player vanished, SuperVanish plugin) {
+        Bukkit.getLogger().info("[SILENT JOIN] " + vanished.getName());
         if (plugin.getSettings().getBoolean("MessageOptions.AnnounceRealJoinQuitToAdmins", true)) {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 if (vanished == onlinePlayer)
@@ -49,6 +50,7 @@ public class Broadcast extends Feature {
     }
 
     public static void announceSilentQuit(Player p, SuperVanish plugin) {
+        Bukkit.getLogger().info("[SILENT QUIT] " + p.getName());
         if (plugin.getSettings().getBoolean("MessageOptions.AnnounceRealJoinQuitToAdmins", true)) {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 if (p == onlinePlayer)
